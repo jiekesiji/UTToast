@@ -77,6 +77,12 @@ public class UTToast {
                 tv.setTextSize(textSize);
                 utToast.toast = toast;
                 mView.addView(tv, params);
+				
+				 if (gd == null) {
+                    gd = new GradientDrawable();
+                    gd.setColor(Color.parseColor("#96000000"));
+                    gd.setCornerRadius(roundRadius);
+                }
             }
         });
     }
@@ -148,11 +154,7 @@ public class UTToast {
         modifiUI(new Runnable() {
             @Override
             public void run() {
-                if (gd == null) {
-                    gd = new GradientDrawable();
-                    gd.setColor(Color.parseColor("#96000000"));
-                    gd.setCornerRadius(roundRadius);
-                }
+               
                 mView.setBackgroundDrawable(gd);
             }
         });
